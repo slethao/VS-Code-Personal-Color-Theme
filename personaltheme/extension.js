@@ -25,7 +25,7 @@ function activate(context) {
 	});
 
 	//TODO making a new command
-	const disposableTwo = vscode.commands.registerCommand('personaltheme.colorPlatteTwo', function () {
+	const disposableTwo = vscode.commands.registerCommand('personalTheme.colorPlatteTwo', function () {
 		vscode.window.showInformationMessage('This is personalTheme Two!');
 	});
 
