@@ -17,12 +17,20 @@ function activate(context) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('personaltheme.helloWorld', function () {
+	const disposable = vscode.commands.registerCommand('personaltheme.colorPlatteOne', function () {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('This is PersonalTheme!');
+		vscode.window.showInformationMessage('This is PersonalTheme One!');
 	});
+
+	//TODO making a new command
+	const disposableTwo = vscode.commands.registerCommand('personaltheme.colorPlatteTwo', function () {
+		vscode.window.showInformationMessage('This is personalTheme Two!');
+	});
+
+	//TODO push the new command into the subscription
+	context.subscriptions.push(disposableTwo);
 
 	context.subscriptions.push(disposable);
 }
