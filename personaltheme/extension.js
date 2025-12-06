@@ -5,17 +5,18 @@ const vscode = require('vscode');
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 
-
-let musicStatus = false;
-
-/**
- * @param {vscode.ExtensionContext} context
+/*
+ * @param {vscode.ExtensionContext} 
+		context
  */
-function activate(context) {
-
+function activate(context)
+{
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "personaltheme" is now active!');
+
+
+	new vscode.ThemeColor("testingSomething");
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
@@ -35,13 +36,26 @@ function activate(context) {
 				prompt: 'Enter in y or n',
 				placeHolder: 'Do you want to still play music?'
 			});
+		/*
+		#ffefe2
+		#f0c1ad
+		#ba8887
+		#49565f --> BACKGROUND COLOR
+		#869aa1
+		#c7d5d5
+
+		#ee92c6
+		#9d8df6 <--- brackets
+		#a1e9ff
+		.vscode/settings.json
+		*/
 		try
 		{
 			let formatRequest = requestMade.toLowerCase();
 			let decisionMap = new Map([
 			['y', "Music Mode Activate!"],
 			['n', "Music Mode Deactivate!"],
-			["", "The request was denied."],
+			["", "Unknown request!"],
 			]); 
 			vscode.window.showInformationMessage(decisionMap.get(formatRequest));
 		}
@@ -54,10 +68,9 @@ function activate(context) {
 
 	//TODO push the new command into the subscription
 	context.subscriptions.push(disposableTwo);
-
 	context.subscriptions.push(disposable);
 		
-	
+	//TODO do the things
 }
 
 // This method is called when your extension is deactivated
