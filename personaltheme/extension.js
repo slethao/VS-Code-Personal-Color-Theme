@@ -36,19 +36,6 @@ function activate(context)
 				prompt: 'Enter in y or n',
 				placeHolder: 'Do you want to still play music?'
 			});
-		/*
-		#ffefe2
-		#f0c1ad
-		#ba8887
-		#49565f --> BACKGROUND COLOR
-		#869aa1
-		#c7d5d5
-
-		#ee92c6
-		#9d8df6 <--- brackets
-		#a1e9ff
-		.vscode/settings.json
-		*/
 		try
 		{
 			let formatRequest = requestMade.toLowerCase();
